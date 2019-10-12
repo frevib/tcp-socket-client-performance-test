@@ -1,4 +1,4 @@
-@file:JvmName("socket-client-blocking-io")
+@file:JvmName("socket-client-blocking-io.kt")
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,8 +48,8 @@ fun main() {
 
 
     println("""
-            time spent: $time
-            amount of socket writes: ${connections * requests}
+            Total running time: $time
+            Requests handled: ${connections * requests}
             req/s: ${(connections * requests) / (time.toFloat() / testIterations) * 1000}
             """.trimIndent())
 

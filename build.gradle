@@ -44,7 +44,7 @@ compileTestKotlin {
 }
 
 task execute(type:JavaExec) {
-    main = "socket-client-blocking-io"
+    main = "socket-client-blocking-io.kt"
     classpath = sourceSets.main.runtimeClasspath
 }
 
