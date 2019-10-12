@@ -1,4 +1,4 @@
-@file:JvmName("socket-client-blocking-io.kt")
+@file:JvmName("socket-client-blocking-io")
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +16,7 @@ fun main() {
     val host = "127.0.0.1"
     val port = 1815
 
-    val connections = 3
+    val connections = 4
     val requests = 500_000
     val testIterations = 3
 
