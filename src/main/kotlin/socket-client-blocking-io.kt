@@ -1,3 +1,5 @@
+@file:JvmName("socket-client-blocking-io")
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -11,9 +13,12 @@ import kotlin.system.measureTimeMillis
 
 fun main() {
 
-    val connections = 4
+    val host = "127.0.0.1"
+    val port = 1815
+
+    val connections = 3
     val requests = 500_000
-    val testIterations = 5
+    val testIterations = 3
 
     val time = measureTimeMillis {
 
@@ -24,7 +29,7 @@ fun main() {
 
                     launch(Dispatchers.Default) {
                         val client = Socket()
-                        client.connect(InetSocketAddress("127.0.0.1", 1815), 10000)
+                        client.connect(InetSocketAddress(host, port), 10000)
 
                         val input = BufferedReader(InputStreamReader(client.getInputStream()))
                         val out = PrintWriter(client.getOutputStream(), true)
